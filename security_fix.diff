@@ -1,0 +1,12 @@
+SQL Injection
+-query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
+-user = connection.execute(query).fetchone()
++"INSERT INTO users (username, password) VALUES (?, ?)",
++(username, password)
+
+IDOR
++if "user_id" not in session:
++   return redirect(url_for("login"))
+
++if session["user_id"] != user_id:
++   return "Доступ запрещён!", 403
