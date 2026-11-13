@@ -1,8 +1,11 @@
 SQL Injection
 -query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
 -user = connection.execute(query).fetchone()
-+"INSERT INTO users (username, password) VALUES (?, ?)",
-+(username, password)
++query = "SELECT * FROM users WHERE username = ? AND password = ?"
++user = connection.execute(
++    query,
++    (username, password)
++).fetchone()
 
 IDOR
 +if "user_id" not in session:
