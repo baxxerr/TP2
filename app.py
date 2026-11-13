@@ -42,8 +42,8 @@ def login():
 
         connection = get_db()
         
-#        query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
-#        user = connection.execute(query).fetchone()
+        # query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
+        # user = connection.execute(query).fetchone()
 
         # Исправление SQL Injection
         query = "SELECT * FROM users WHERE username = ? AND password = ?"
